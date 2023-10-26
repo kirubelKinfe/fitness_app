@@ -23,7 +23,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     const fetchExercisesData = async () => {
       let exerciseData = [];
 
-      if(bodyPart == 'all') {
+      if(bodyPart === 'all') {
         exerciseData = await fetchData(
           'https://exercisedb.p.rapidapi.com/exercises', exerciseOptions
         );
@@ -36,7 +36,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     }
     fetchExercisesData();
       
-  }, [bodyPart]);
+  }, [bodyPart, setExercises]);
 
   return (
     <Box
